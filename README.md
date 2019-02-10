@@ -36,6 +36,8 @@ console.log(value) // 24
 
 ## Develop
 
+If you're interested in contributing please read the [Contributing Guide](./CONTRIBUTING.md)
+
 * Fork this repo
 * Install dependencies with `npm i`
 * Create tests for your changes
