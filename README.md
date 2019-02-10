@@ -20,19 +20,36 @@ Unitconverter is a library to convert units such as length, mass, volume, and mo
 Simply import the type of converter you'd like to use:
 ```
 const { LengthConverter } from "@keithalpichi/unitconverter"
+```
 
+Initialize an instance:
+```
 const item = new LengthConverter({ unit: "ft", value: 2 });
+```
 
-const value = item
-                .to("in")
-                .value()
+Use the `add` method to add to the converter value:
+```
+item.add(1); // value is now at 3
+```
 
-console.log(value) // 24
+Use the `to` method to convert the unit to another unit:
+```
+item.to("in");
+```
+
+Use the `value` method to return the converted value
+```
+item.value(); // 36
+```
+
+Additionally, you can chain the methods together:
+```
+const value = item.add(1).to("in").value();
 ```
 
 ## Documentation
 
-*tbd*
+Refer to the [Documentation Guide](./DOCUMENTATION.md)
 
 ## Develop
 
@@ -46,7 +63,7 @@ If you're interested in contributing please read the [Contributing Guide](./CONT
 
 ## Contributing
 
-*tbd*
+Refer to the [Contributing Guide](./CONTRIBUTING.md)
 
 ## License
 
