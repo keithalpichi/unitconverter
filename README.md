@@ -8,7 +8,11 @@
 
 ![Stars](https://img.shields.io/github/stars/keithalpichi/unitconverter.svg?style=for-the-badge)
 
-Unitconverter is a library to convert units such as length, mass, volume, and more.
+Unitconverter is a library to convert units such as length, mass, volume, and more. 
+
+If you need to convert inches to centimeters, centimeters to feet, kilograms to pounds, liters to quarts, or perform any other conversions then Unitconverter is the library for you.
+
+It is written in Typescript, compiled to Javascript, and thoroughly tested with Jest.
 
 ## Table of Contents
 
@@ -26,7 +30,7 @@ Unitconverter is a library to convert units such as length, mass, volume, and mo
 `npm i @keithalpichi/unitconverter`
 
 ## Usage
-Simply import the type of converter you'd like to use:
+Simply import the type of converter you'd like to use. In this case we'll showcase the `LengthConverter`:
 ```
 const { LengthConverter } from "@keithalpichi/unitconverter"
 ```
