@@ -4,7 +4,7 @@ Unitconverter is a library to convert units such as length, mass, volume, and mo
 
 ## Table of Contents
 
-1. [Requirements](#requirements)
+1. [Installation](#installation)
 1. [Usage](#usage)
 1. [Documentation](#documentation)
 1. [Develop](#develop)
@@ -12,7 +12,7 @@ Unitconverter is a library to convert units such as length, mass, volume, and mo
 1. [License](#license)
 1. [Changelog](#changelog)
 
-## Requirements
+## Installation
 
 `npm i @keithalpichi/unitconverter`
 
