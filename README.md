@@ -10,6 +10,7 @@ Unitconverter is a library to convert units such as length, mass, volume, and mo
 1. [Develop](#develop)
 1. [Contributing](#contributing)
 1. [License](#license)
+1. [Changelog](#changelog)
 
 ## Requirements
 
@@ -48,3 +49,5 @@ console.log(value) // 24
 ## License
 
 Unitconverter is [MIT licensed](./LICENSE)
+
+## Changelog
