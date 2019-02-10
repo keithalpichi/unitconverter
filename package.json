@@ -38,7 +38,9 @@
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.3.1"
   },
-  "hooks": {
-    "pre-commit": "npm run pre-commit-lint && npm run pre-commit-test"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit-lint && npm run pre-commit-test"
+    }
   }
 }
