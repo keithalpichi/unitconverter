@@ -1,15 +1,15 @@
-declare type LengthTypes = "ft" | "cm" | "in";
-interface LengthOptions {
+export declare type LengthTypes = 'ft' | 'cm' | 'in';
+export interface LengthOptions {
     unit: LengthTypes;
-    value: number;
+    value?: number;
 }
-export default class LengthConverter {
+export declare class LengthConverter {
     static errUnsupportedUnit: Error;
     static errNaN: Error;
     private _unit;
     private _value;
     constructor(data: LengthOptions);
-    validatePositiveNumber(number: number): number;
+    validatePositiveNumber(n: number | undefined): number;
     add(n: number): this;
     to(unit: LengthTypes): this;
     value(): number;
@@ -17,4 +17,3 @@ export default class LengthConverter {
     ft(): this;
     cm(): this;
 }
-export {};

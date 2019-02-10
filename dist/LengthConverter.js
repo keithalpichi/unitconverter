@@ -1,91 +1,95 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class LengthConverter {
-    constructor(data) {
+var LengthConverter = /** @class */ (function () {
+    function LengthConverter(data) {
         this._unit = data.unit;
         this._value = this.validatePositiveNumber(data.value);
     }
-    validatePositiveNumber(number) {
-        if (number < 0) {
+    LengthConverter.prototype.validatePositiveNumber = function (n) {
+        if (!n) {
+            return 0;
+        }
+        if (n < 0) {
             throw LengthConverter.errNaN;
         }
-        return number;
-    }
-    add(n) {
+        return n;
+    };
+    LengthConverter.prototype.add = function (n) {
         this._value = this._value < 0 ? 0 : this._value + n;
         return this;
-    }
-    to(unit) {
-        if (unit === "in") {
+    };
+    LengthConverter.prototype.to = function (unit) {
+        if (unit === 'in') {
             // we cant use "this[in]()" below since "in" is a reserved JS word
             return this.inches();
         }
         return this[unit]();
-    }
-    value() {
+    };
+    LengthConverter.prototype.value = function () {
         return this._value;
-    }
-    inches() {
-        if (this._unit === "in") {
+    };
+    LengthConverter.prototype.inches = function () {
+        if (this._unit === 'in') {
             return this;
         }
         switch (this._unit) {
-            case "ft":
+            case 'ft':
                 // ft to in
                 this._value = this._value * 12;
-                this._unit = "ft";
+                this._unit = 'ft';
                 break;
-            case "cm":
+            case 'cm':
                 // cm to in;
                 this._value = this._value / 2.54;
-                this._unit = "cm";
+                this._unit = 'cm';
                 break;
             default:
                 throw LengthConverter.errUnsupportedUnit;
         }
         return this;
-    }
-    ft() {
-        if (this._unit === "ft") {
+    };
+    LengthConverter.prototype.ft = function () {
+        if (this._unit === 'ft') {
             return this;
         }
         switch (this._unit) {
-            case "in":
+            case 'in':
                 // in to ft
                 this._value = this._value / 12;
-                this._unit = "ft";
+                this._unit = 'ft';
                 break;
-            case "cm":
+            case 'cm':
                 // cm to ft;
                 this._value = Math.floor((this._value / 2.54) / 12);
-                this._unit = "ft";
+                this._unit = 'ft';
                 break;
             default:
                 throw LengthConverter.errUnsupportedUnit;
         }
         return this;
-    }
-    cm() {
-        if (this._unit === "cm") {
+    };
+    LengthConverter.prototype.cm = function () {
+        if (this._unit === 'cm') {
             return this;
         }
         switch (this._unit) {
-            case "ft":
+            case 'ft':
                 // ft to cm
                 this._value = (this._value * 12) * 2.54;
-                this._unit = "cm";
+                this._unit = 'cm';
                 break;
-            case "in":
+            case 'in':
                 // in to cm;
                 this._value = this._value * 2.54;
-                this._unit = "ft";
+                this._unit = 'ft';
                 break;
             default:
                 throw LengthConverter.errUnsupportedUnit;
         }
         return this;
-    }
-}
-LengthConverter.errUnsupportedUnit = new Error("Unsupported unit type");
-LengthConverter.errNaN = new Error("Number provided is not a valid number");
-exports.default = LengthConverter;
+    };
+    LengthConverter.errUnsupportedUnit = new Error('Unsupported unit type');
+    LengthConverter.errNaN = new Error('Number provided is not a valid number');
+    return LengthConverter;
+}());
+exports.LengthConverter = LengthConverter;
