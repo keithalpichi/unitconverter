@@ -17,8 +17,9 @@ Unitconverter is a library to convert units such as length, mass, volume, and mo
 1. [Documentation](#documentation)
 1. [Develop](#develop)
 1. [Contributing](#contributing)
-1. [License](#license)
+1. [RoadMap](#roadmap)
 1. [Changelog](#changelog)
+1. [License](#license)
 
 ## Installation
 
@@ -73,9 +74,9 @@ If you're interested in contributing please read the [Contributing Guide](./CONT
 
 Refer to the [Contributing Guide](./CONTRIBUTING.md)
 
-## License
-
-Unitconverter is [MIT licensed](./LICENSE)
+## Roadmap
+- Add `MassConverter`
+- Add `VolumeConverter`
 
 ## Changelog
 
@@ -83,3 +84,7 @@ Unitconverter is [MIT licensed](./LICENSE)
 - Add `LengthConverter`
 - Add git pre-commit hooks to run lint and test scripts before git commits
 - Add Jest tests for `LengthConverter`
+
+## License
+
+Unitconverter is [MIT licensed](./LICENSE)

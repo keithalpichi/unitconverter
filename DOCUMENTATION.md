@@ -26,3 +26,11 @@ Accepts `LengthTypes` and returns the `LengthConverter` instance
 
 #### `value() : number`
 Returns the latest converted number
+
+# MassConverter
+
+*tbd*
+
+# VolumeConverter
+
+*tbd*
