@@ -1,9 +1,21 @@
+/**
+ * LengthTypes is a type that contains the supported length units.
+ */
 export type LengthTypes = 'ft' | 'cm' | 'in'
+
+/**
+ * LengthOptions is an interface that the LengthConverter class
+ * accepts as an argument
+ */
 export interface LengthOptions {
   unit: LengthTypes
   value?: number
 }
 
+/**
+ * LengthConverter is a class that converts
+ * numbers of one unit of length to another
+ */
 export class LengthConverter {
   static errUnsupportedUnit = new Error('Unsupported unit type')
   static errNaN = new Error('Number provided is not a valid number')
@@ -16,7 +28,7 @@ export class LengthConverter {
     this._value = this.validatePositiveNumber(data.value)
   }
 
-  validatePositiveNumber (n: number | undefined) {
+  private validatePositiveNumber (n: number | undefined) {
     if (!n) {
       return 0
     }
@@ -43,7 +55,7 @@ export class LengthConverter {
     return this._value
   }
 
-  inches (): this {
+  private inches (): this {
     if (this._unit === 'in') {
       return this
     }
@@ -64,7 +76,7 @@ export class LengthConverter {
     return this
   }
 
-  ft (): this {
+  private ft (): this {
     if (this._unit === 'ft') {
       return this
     }
@@ -85,7 +97,7 @@ export class LengthConverter {
     return this
   }
 
-  cm (): this {
+  private cm (): this {
     if (this._unit === 'cm') {
       return this
     }
