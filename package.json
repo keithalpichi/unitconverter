@@ -4,11 +4,19 @@
   "description": "Convert one unit to another",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "rm -rf ./dist && tsc",
     "test": "jest --watchAll",
-    "pre-commit-lint": "tslint -p .",
-    "pre-commit-test": "jest"
+    "lint": "tslint -p .",
+    "test:no-watch": "jest",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint && npm run test:no-watch",
+    "preversion": "npm run lint",
+    "version": "git add package.json package-lock.json",
+    "postversion": "git push origin master && git push --tags"
   },
   "directories": {
     "lib": "lib"
@@ -40,7 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run pre-commit-lint && npm run pre-commit-test"
+      "pre-commit": "npm run lint && npm run test:no-watch"
     }
   }
 }
