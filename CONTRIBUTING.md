@@ -27,48 +27,4 @@ Only open an issue if you cannot find an issue related to the bug.
 
 ## New Issues
 
-When creating new issues please follow the following criteria:
-
-### Issue Title
-
-Should prepend the title you define with one of the following:
-- Bug:
-- Feature Request:
-- Improvement:
-- Documentation:
-- Other:
-
-So a bug issue might look like, "Bug: throws error on conversion".
-
-### Issue Description
-
-The description of the issue should follow the appropriate template below:
-
-#### Bug
-```
-- Version:
-- Description:
-- Expectations:
-- Reality:
-- Steps to Reproduce:
-- Notes:
-```
-
-- Version: The version of the library
-- Description: Short descriptive text of the issue
-- Expectations: What I expect the library to do
-- Reality: What the library did instead
-- Steps to Reproduce: Step-by-step list of how to reproduce the bug
-- Notes: Other comments, code snippets, stack traces that can aid in resolving the issue
-
-#### Feature Requests
-*tbd*
-
-#### Improvements
-*tbd*
-
-#### Documentation
-*tbd*
-
-#### Other
-*tbd*
+When creating new issues please follow the template provided based on the type of issue you select.
