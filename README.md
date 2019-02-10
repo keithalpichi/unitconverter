@@ -1,5 +1,13 @@
 # Unitconverter
 
+![NPM Version](https://img.shields.io/npm/v/@keithalpichi/unitconverter.svg?style=for-the-badge)
+
+![Package Size](https://img.shields.io/bundlephobia/min/@keithalpichi/unitconverter.svg?style=for-the-badge)
+
+![License](https://img.shields.io/npm/l/@keithalpichi/unitconverter.svg?style=for-the-badge)
+
+![Stars](https://img.shields.io/github/stars/keithalpichi/unitconverter.svg?style=for-the-badge)
+
 Unitconverter is a library to convert units such as length, mass, volume, and more.
 
 ## Table of Contents
