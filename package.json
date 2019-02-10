@@ -40,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run pre-commit-lint && npm run pre-commit-test"
+      "pre-commit": "npm run pre-commit-test"
     }
   }
 }
