@@ -53,3 +53,8 @@ If you're interested in contributing please read the [Contributing Guide](./CONT
 Unitconverter is [MIT licensed](./LICENSE)
 
 ## Changelog
+
+### v1.0.0
+- Add `LengthConverter`
+- Add git pre-commit hooks to run lint and test scripts before git commits
+- Add Jest tests for `LengthConverter`
