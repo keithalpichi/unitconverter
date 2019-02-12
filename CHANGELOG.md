@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+- Add `BaseConverter` abstract class for other classes to inherit
+- Add `replace` method
+
 ## v1.1.0
 - Update documentation and contributing guide
 - Add JSDoc to LengthConverter
