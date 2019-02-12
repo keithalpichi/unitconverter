@@ -8,7 +8,7 @@
 
 ![Stars](https://img.shields.io/github/stars/keithalpichi/unitconverter.svg?style=for-the-badge)
 
-Unitconverter is a library to convert units such as length, mass, volume, and more. 
+Unitconverter is a library to convert units of measurements such as length, mass, volume, and more. 
 
 If you need to convert inches to centimeters, centimeters to feet, kilograms to pounds, liters to quarts, or perform any other conversions then Unitconverter is the library for you.
 
@@ -79,8 +79,11 @@ If you're interested in contributing please read the [Contributing Guide](./CONT
 Refer to the [Contributing Guide](./CONTRIBUTING.md)
 
 ## Roadmap
+
 - Add `MassConverter`
 - Add `VolumeConverter`
+
+View the [Issue Tracker](https://github.com/keithalpichi/unitconverter/projects/1) for more details.
 
 ## Changelog
 

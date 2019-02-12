@@ -33,7 +33,7 @@ Any questions related to how to use the library should first consult the [docume
 
 ## Issues
 
-Please refer to the [Github issues page](https://github.com/keithalpichi/unitconverter/issues) to view, find, and discuss issues, bugs, improvements, feature requests, and more.
+Please refer to the [Github issues page](https://github.com/keithalpichi/unitconverter/issues) and the [Issue Tracker](https://github.com/keithalpichi/unitconverter/projects/1) to view, find, and discuss the status of current issues, bugs, improvements, feature requests, and more.
 
 Only open an issue if you cannot find a related issue.
 
