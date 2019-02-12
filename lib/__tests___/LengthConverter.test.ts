@@ -1,19 +1,6 @@
-import { LengthConverter, LengthOptions } from '../index'
+import { LengthConverter, LengthOptions } from '../LengthConverter'
 
 describe('LengthConverter Class', () => {
-  const errNaN = 'Number provided is not a valid number'
-  it("Negative number provided to 'value' key throws error upon initialization", () => {
-    try {
-      const lc = new LengthConverter({ unit: 'cm', value: -1 })
-    } catch (error) {
-      expect(error.message).toBe(errNaN)
-    }
-  })
-
-  it('Undefined value defaults to zero', () => {
-    expect(new LengthConverter({ value: undefined, unit: 'in' }).value()).toBe(0)
-  })
-
   it('Converts cm to inches', () => {
     const value: LengthOptions = {
       value: 152.4,

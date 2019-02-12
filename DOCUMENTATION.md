@@ -1,3 +1,22 @@
+# Documentation
+
+<details>
+<summary>v1.2.0</summary>
+
+# LengthConverter
+
+Same methods as previous version. This version adds the `replace` method.
+
+## Methods
+
+#### `replace(n : number) : LengthConverter`
+Replaces the current value with `n` and returns `LengthConverter` instance. This method prevents the current value from being replaced by a negative number.
+
+</details>
+
+<details>
+<summary>v1.1.0</summary>
+
 # LengthConverter
 
 Named export `UnitConverter.LengthConverter`
@@ -34,3 +53,4 @@ Returns the latest converted number
 # VolumeConverter
 
 *tbd*
+</details>

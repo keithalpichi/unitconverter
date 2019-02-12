@@ -1,6 +1,5 @@
-import { LengthConverter, LengthOptions } from './LengthConverter'
+import { LengthConverter } from './LengthConverter'
 
 export {
-  LengthConverter,
-  LengthOptions
+  LengthConverter
 }
