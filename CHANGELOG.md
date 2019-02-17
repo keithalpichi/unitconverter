@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0
+- Add support for millimeter conversions on the `LengthConverter` class
+- Add `unit` method
+
 ## v1.2.0
 - Add `BaseConverter` abstract class for other classes to inherit
 - Add `replace` method

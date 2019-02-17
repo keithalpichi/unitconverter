@@ -22,6 +22,10 @@ describe('BaseConverter Class', () => {
     expect(new Converter({ value: 1, unit: 'foo' }).value()).toBe(1)
   })
 
+  it('Returns the current unit', () => {
+    expect(new Converter({ value: 1, unit: 'foo' }).unit()).toBe('foo')
+  })
+
   it('Undefined value defaults to zero', () => {
     expect(new Converter({ value: undefined, unit: 'foo' }).value()).toBe(0)
   })

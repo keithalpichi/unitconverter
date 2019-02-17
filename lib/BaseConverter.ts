@@ -70,6 +70,13 @@ export abstract class BaseConverter<T> {
   }
 
   /**
+   * Returns the current unit
+   */
+  public unit (): T {
+    return this._unit
+  }
+
+  /**
    * Replaces the current value with n and returns this
    * Method prevents value from being replaced by a negative number
    * @param n number
