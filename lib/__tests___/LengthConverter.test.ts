@@ -3,7 +3,7 @@ import { LengthConverter, LengthOptions } from '../LengthConverter'
 describe('LengthConverter Class', () => {
   it('Contains a static propery for the order of conversions', () => {
     expect(LengthConverter.orderOfConversion).toEqual([
-      'mm', 'cm', 'in', 'ft'
+      'mm', 'cm', 'in', 'ft', 'yd'
     ])
   })
 })
@@ -33,6 +33,14 @@ describe('LengthConverter Class: Conversions to inches', () => {
     }
     expect(new LengthConverter(value).to('in').value()).toBeCloseTo(0.0393701)
   })
+
+  it('Converts yd to in', () => {
+    const value: LengthOptions = {
+      value: 1,
+      unit: 'yd'
+    }
+    expect(new LengthConverter(value).to('in').value()).toBe(36)
+  })
 })
 
 describe('LengthConverter Class: Conversions to feet', () => {
@@ -58,6 +66,14 @@ describe('LengthConverter Class: Conversions to feet', () => {
       unit: 'mm'
     }
     expect(new LengthConverter(value).to('ft').value()).toBeCloseTo(0.00328084)
+  })
+
+  it('Converts yd to ft', () => {
+    const value: LengthOptions = {
+      value: 1,
+      unit: 'yd'
+    }
+    expect(new LengthConverter(value).to('ft').value()).toBe(3)
   })
 })
 
@@ -85,6 +101,14 @@ describe('LengthConverter Class: Conversions to centimeters', () => {
     }
     expect(new LengthConverter(value).to('cm').value()).toBe(0.1)
   })
+
+  it('Converts yd to cm', () => {
+    const value: LengthOptions = {
+      value: 1,
+      unit: 'yd'
+    }
+    expect(new LengthConverter(value).to('cm').value()).toBe(91.44)
+  })
 })
 
 describe('LengthConverter Class: Conversions to millimeters', () => {
@@ -110,5 +134,47 @@ describe('LengthConverter Class: Conversions to millimeters', () => {
       unit: 'cm'
     }
     expect(new LengthConverter(value).to('mm').value()).toBe(10)
+  })
+
+  it('Converts yd to mm', () => {
+    const value: LengthOptions = {
+      value: 1,
+      unit: 'yd'
+    }
+    expect(new LengthConverter(value).to('mm').value()).toBe(914.4)
+  })
+})
+
+describe('LengthConverter Class: Conversions to yards', () => {
+  it('Converts in to yd', () => {
+    const value: LengthOptions = {
+      value: 1,
+      unit: 'in'
+    }
+    expect(new LengthConverter(value).to('yd').value()).toBeCloseTo(0.0277778)
+  })
+
+  it('Converts ft to yd', () => {
+    const value: LengthOptions = {
+      value: 1,
+      unit: 'ft'
+    }
+    expect(new LengthConverter(value).to('yd').value()).toBeCloseTo(0.333333)
+  })
+
+  it('Converts cm to yd', () => {
+    const value: LengthOptions = {
+      value: 1,
+      unit: 'cm'
+    }
+    expect(new LengthConverter(value).to('yd').value()).toBeCloseTo(0.0109361)
+  })
+
+  it('Converts mm to yd', () => {
+    const value: LengthOptions = {
+      value: 1,
+      unit: 'mm'
+    }
+    expect(new LengthConverter(value).to('yd').value()).toBeCloseTo(0.00109361)
   })
 })
