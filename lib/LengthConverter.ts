@@ -5,7 +5,7 @@ export type LengthOptions = ConverterOptions<LengthTypes>
 /**
  * LengthTypes is a type that contains the supported length units.
  */
-export type LengthTypes = 'yd' | 'ft' | 'cm' | 'in' | 'mm'
+export type LengthTypes = 'm' | 'yd' | 'ft' | 'cm' | 'in' | 'mm'
 
 /**
  * LengthConverter is a class that converts
@@ -13,7 +13,7 @@ export type LengthTypes = 'yd' | 'ft' | 'cm' | 'in' | 'mm'
  */
 export class LengthConverter extends BaseConverter<LengthTypes> {
   static orderOfConversion: LengthTypes[] = [
-    'mm', 'cm', 'in', 'ft', 'yd'
+    'mm', 'cm', 'in', 'ft', 'yd', 'm'
   ]
 
   /**
@@ -129,6 +129,9 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
       return value
     }
     switch (from) {
+      case 'm':
+        // m to yd
+        return value * 1.09361
       case 'ft':
         // ft to yd
         return value / 3
@@ -136,6 +139,27 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
         throw this.errUnsupportedUnit
     }
   }
+
+  /**
+   * Converts to meters from the following units:
+   * - yd
+   * @param  {number} value
+   * @param  {LengthTypes} from
+   * @returns number
+   */
+  private m (value: number, from: LengthTypes): number {
+    if (from === 'm') {
+      return value
+    }
+    switch (from) {
+      case 'yd':
+        // yd to m
+        return value * 0.9144
+      default:
+        throw this.errUnsupportedUnit
+    }
+  }
+
   /**
    * Recursively converts the currentUnit until it reaches the goalUnit
    * @param  {number} value
@@ -180,6 +204,9 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
         break
       case 'yd':
         method = this.yd
+        break
+      case 'm':
+        method = this.m
         break
       default:
         throw this.errUnsupportedUnit
