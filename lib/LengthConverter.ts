@@ -5,7 +5,7 @@ export type LengthOptions = ConverterOptions<LengthTypes>
 /**
  * LengthTypes is a type that contains the supported length units.
  */
-export type LengthTypes = 'ft' | 'cm' | 'in' | 'mm'
+export type LengthTypes = 'yd' | 'ft' | 'cm' | 'in' | 'mm'
 
 /**
  * LengthConverter is a class that converts
@@ -13,13 +13,26 @@ export type LengthTypes = 'ft' | 'cm' | 'in' | 'mm'
  */
 export class LengthConverter extends BaseConverter<LengthTypes> {
   static orderOfConversion: LengthTypes[] = [
-    'mm', 'cm', 'in', 'ft'
+    'mm', 'cm', 'in', 'ft', 'yd'
   ]
 
+  /**
+   * Converts the current unit to the unit provided
+   * @param  {LengthTypes} unit
+   * @returns this
+   */
   public to (unit: LengthTypes): this {
     return this.convert(this._value, this._unit, unit)
   }
 
+  /**
+   * Converts to inches from the following units:
+   * - ft
+   * - cm
+   * @param  {number} value
+   * @param  {LengthTypes} from
+   * @returns number
+   */
   private inches (value: number, from: LengthTypes): number {
     if (from === 'in') {
       return value
@@ -36,6 +49,14 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
     }
   }
 
+  /**
+   * Converts to feet from the following units:
+   * - in
+   * - yd
+   * @param  {number} value
+   * @param  {LengthTypes} from
+   * @returns number
+   */
   private ft (value: number, from: LengthTypes): number {
     if (from === 'ft') {
       return value
@@ -44,11 +65,22 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
       case 'in':
         // in to ft
         return value / 12
+      case 'yd':
+        // yd to ft
+        return value * 3
       default:
         throw this.errUnsupportedUnit
     }
   }
 
+  /**
+   * Converts to centimeters from the following units:
+   * - mm
+   * - in
+   * @param  {number} value
+   * @param  {LengthTypes} from
+   * @returns number
+   */
   private cm (value: number, from: LengthTypes): number {
     if (from === 'cm') {
       return value
@@ -65,6 +97,13 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
     }
   }
 
+  /**
+   * Converts to millimeters from the following units:
+   * - cm
+   * @param  {number} value
+   * @param  {LengthTypes} from
+   * @returns number
+   */
   private mm (value: number, from: LengthTypes): number {
     if (from === 'mm') {
       return value
@@ -78,6 +117,32 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
     }
   }
 
+  /**
+   * Converts to yards from the following units:
+   * - ft
+   * @param  {number} value
+   * @param  {LengthTypes} from
+   * @returns number
+   */
+  private yd (value: number, from: LengthTypes): number {
+    if (from === 'yd') {
+      return value
+    }
+    switch (from) {
+      case 'ft':
+        // ft to yd
+        return value / 3
+      default:
+        throw this.errUnsupportedUnit
+    }
+  }
+  /**
+   * Recursively converts the currentUnit until it reaches the goalUnit
+   * @param  {number} value
+   * @param  {LengthTypes} currentUnit
+   * @param  {LengthTypes} goalUnit
+   * @returns this
+   */
   private convert (value: number, currentUnit: LengthTypes, goalUnit: LengthTypes): this {
     // when we arrive at the goal unit, return this
     if (currentUnit === goalUnit) {
@@ -99,7 +164,7 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
 
     // get the correct method to use to convert the value
     const nextUnit = LengthConverter.orderOfConversion[index]
-    let method: any
+    let method: (value: number, from: LengthTypes) => number
     switch (nextUnit) {
       case 'mm':
         method = this.mm
@@ -113,12 +178,15 @@ export class LengthConverter extends BaseConverter<LengthTypes> {
       case 'ft':
         method = this.ft
         break
+      case 'yd':
+        method = this.yd
+        break
       default:
         throw this.errUnsupportedUnit
     }
 
     // get the newly converted value
-    const newValue = method(value, currentUnit)
+    const newValue = method.call(this, value, currentUnit)
 
     // call this function recursively until we reach the goal unit
     return this.convert(newValue, nextUnit, goalUnit)
