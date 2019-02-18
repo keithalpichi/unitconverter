@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "build": "rm -rf ./dist && tsc",
-    "test": "jest --watchAll",
+    "test:watch": "jest --watchAll",
     "lint": "tslint -p .",
-    "test:no-watch": "jest",
+    "test": "jest",
     "prepare": "npm run build"
   },
   "directories": {
@@ -48,7 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test:no-watch"
+      "pre-commit": "npm run lint && npm run test"
     }
   }
 }
