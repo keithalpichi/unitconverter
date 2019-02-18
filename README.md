@@ -1,5 +1,9 @@
 # Unitconverter
 
+![Master Build](https://img.shields.io/travis/keithalpichi/unitconverter/master.svg?label=build%3A%20master&style=for-the-badge)
+
+![Dev Build](https://img.shields.io/travis/keithalpichi/unitconverter/develop.svg?label=build%3A%20dev&style=for-the-badge)
+
 ![NPM Version](https://img.shields.io/npm/v/@keithalpichi/unitconverter.svg?style=for-the-badge)
 
 ![Package Size](https://img.shields.io/bundlephobia/min/@keithalpichi/unitconverter.svg?style=for-the-badge)
