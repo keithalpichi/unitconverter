@@ -29,6 +29,9 @@ Accepts `LengthOptions` and returns an instance of `LengthConverter`
 
 ## Methods
 
+#### `add(n: number) : LengthConverter`
+Adds `n` to the current value and returns the `LengthConverter` instance
+
 #### `to(LengthTypes) : LengthConverter`
 Accepts `LengthTypes` and returns the `LengthConverter` instance
 
@@ -78,6 +81,9 @@ Accepts `LengthOptions` and returns an instance of `LengthConverter`
 
 ## Methods
 
+#### `add(n: number) : LengthConverter`
+Adds `n` to the current value and returns the `LengthConverter` instance
+
 #### `to(LengthTypes) : LengthConverter`
 Accepts `LengthTypes` and returns the `LengthConverter` instance
 
@@ -122,6 +128,9 @@ Accepts `LengthOptions` and returns an instance of `LengthConverter`
 ```
 
 ## Methods
+
+#### `add(n: number) : LengthConverter`
+Adds `n` to the current value and returns the `LengthConverter` instance
 
 #### `to(LengthTypes) : LengthConverter`
 Accepts `LengthTypes` and returns the `LengthConverter` instance
